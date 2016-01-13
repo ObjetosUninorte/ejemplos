@@ -26,14 +26,14 @@ public class Procedimental {
     public static void main(String[] args) {
          Scanner scanner = new Scanner(System.in);
          
-          // leer de la linea de comando
         try {
-            // Pedirle al usuario la edad
+            // Pedirle el valor de los parametros por consola
             System.out.print("Ingrese un entero para el primer parametro: ");
             parametroA = scanner.nextInt();
             System.out.print("Ingrese un entero para el segundo parametro: ");
             parametroB = scanner.nextInt();
             
+            // Mostrando el usuario un valor por consola
             System.out.println(String.format("La suma de los parametros es: %d ", parametroA+parametroB));
             
         } catch (Exception e) {
