@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Procedimental {
     static int parametroA;
     static int parametroB;
+    static int parametroC;
     
     static void sumaParametroA(int parametroA){
         parametroA = parametroA + 3;
