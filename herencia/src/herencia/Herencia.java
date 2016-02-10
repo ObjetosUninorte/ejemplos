@@ -10,10 +10,11 @@ package herencia;
  */
 public class Herencia {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        A a = new A(10);
+        B b = new B();
+        
+        a.atributoDefault = 1;
     }
 }

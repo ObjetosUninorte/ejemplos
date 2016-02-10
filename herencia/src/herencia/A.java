@@ -1,75 +1,66 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package herencia;
 
 /**
  *
  * @author pwightman
  */
+
+
+/*
+Access Levels
+Modifier        Class   Package Subclass    World
+public            Y       Y       Y          Y
+protected         Y       Y       Y          N
+(Default)         Y       Y       N          N // dentro del paquete es public
+private           Y       N       N          N
+*/
+
+
 public class A {
     
-    int atributo1;
-    private int atributo2;
-    protected int atributo3;
-    public final int atributo7;
-    static int atributo4;
-    static private int atributo5;
-    static public final int atributo6=1;
+   // control de acceso por defecto, lo que quiere decir public dentro del paquete
+    int atributoDefault;
     
+    // control de acceso privado
+    private int atributoPrivate;
+    
+    // control de acceso protegido
+    protected int atributoProtected;
+    
+    // control de acceso privado
+    public int atributoPublic;
+    
+    // este atributo solo se le puede asignar valor una sola vez
+    public final int atributoPublicFinal;
+    
+    // este atributo no depende de una instancia
+    // control de acceso por defecto
+    static int atributoStatic;
+    
+    // este atributo no depende de una instancia
+    // control de acceso privado
+    static private int atributoStaticPrivate;
+    
+    // este atributo no depende de una instancia
+    // control de acceso privado
+    // este atributo no puede cambiar de valor
+    static public final int atributoStaticPublic=1;
+    
+    // constructor
     public A(int val){
-        atributo7=val;
+        atributoPrivate=val;
+        
+        // a este atributo se le tiene que asignar un valor.
+        atributoPublicFinal = 2;
+    }    
+
+    public int getAtributoPrivate() {
+        return atributoPrivate;
     }
 
-    public int getAtributo1() {
-        return atributo1;
+    public void setAtributoPrivate(int atributoPrivate) {
+        this.atributoPrivate = atributoPrivate;
     }
-
-    public void setAtributo1(int atributo1) {
-        this.atributo1 = atributo1;
-    }
-
-    public int getAtributo2() {
-        return atributo2;
-    }
-
-    public void setAtributo2(int atributo2) {
-        this.atributo2 = atributo2;
-    }
-
-    public int getAtributo3() {
-        return atributo3;
-    }
-
-    public void setAtributo3(int atributo3) {
-        this.atributo3 = atributo3;
-    }
-
-    public static int getAtributo4() {
-        return atributo4;
-    }
-
-    public static void setAtributo4(int atributo4) {
-        A.atributo4 = atributo4;
-    }
-
-    public static int getAtributo5() {
-        return atributo5;
-    }
-
-    public static void setAtributo5(int atributo5) {
-        A.atributo5 = atributo5;
-    }
-
-    public static int getAtributo6() {
-        return atributo6;
-    }
-
-    public int getAtributo7() {
-        return atributo7;
-    }
-    
     
     
 }
