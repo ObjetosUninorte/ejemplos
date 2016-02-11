@@ -13,6 +13,8 @@ public class UberPets {
     
     private Driver[] mDriver;
     private Client[] mClient;
+    private Trip[] mTrip;
+    
     private int mRegisterClients;
     private int mRegisterDrivers;
     private final int DRIVER_MAX = 100;
@@ -21,9 +23,12 @@ public class UberPets {
     public UberPets() {
         // vamos a asumir que tiene maximo 100 conductores
         mDriver = new Driver[DRIVER_MAX];
-        
+        mTrip = new Trip[DRIVER_MAX];
+                
         // vamos a asumir que tiene maximo 200  clientes
         mClient = new Client[CLIENT_MAX];
+        
+
         
         // comenzamos con cero conductores y clientes
         mRegisterDrivers = 0;
@@ -60,7 +65,7 @@ public class UberPets {
     
     public boolean registerNewDriver(String driverName){
         if (mRegisterDrivers < DRIVER_MAX){
-            Driver driver = new Driver(driverName);
+            Driver driver = new Driver(mRegisterDrivers,driverName);
             mDriver[mRegisterDrivers] = driver;
             mRegisterDrivers++;
             return true;
@@ -73,13 +78,11 @@ public class UberPets {
     }
     
     public void createNewTrip(Client client, String initialDir, String finalDir){
-        
         // look for available drivers
         Driver driver = lookAvailableDrivers();
-        
-        
-        Trip trip = new Trip(client, driver, initialDir,finalDir);
-        
+       
+        // we use driver´s id to store the new trip
+        mTrip[driver.getId()] = new Trip(client, driver, initialDir,finalDir); 
     }
 
     /**
