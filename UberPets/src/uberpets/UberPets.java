@@ -77,12 +77,19 @@ public class UberPets {
         return mDriver[0];
     }
     
-    public void createNewTrip(Client client, String initialDir, String finalDir){
+    public int createNewTrip(Client client, String initialDir, String finalDir){
         // look for available drivers
         Driver driver = lookAvailableDrivers();
        
         // we use driver´s id to store the new trip
         mTrip[driver.getId()] = new Trip(client, driver, initialDir,finalDir); 
+        
+        return driver.getId();
+    }
+    
+    public void finishTrip(int tripId){
+        
+        mTrip[tripId] = null; 
     }
 
     /**
