@@ -11,12 +11,18 @@ package uberpets;
  * @author augustosalazar
  */
 public class Driver {
+    private int mId;
     private Car mCar;
     private String mName;
 
-    public Driver(String name) {
+    public Driver(int id,String name) {
+        mId = id;
         mName = name;
         mCar = new Car();
+    }
+    
+    public int getId(){
+        return mId;
     }
     
     
