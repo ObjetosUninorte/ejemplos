@@ -18,8 +18,6 @@ public class UberPets {
     private final int DRIVER_MAX = 100;
     private final int  CLIENT_MAX = 200;
     
-    
-    
     public UberPets() {
         // vamos a asumir que tiene maximo 100 conductores
         mDriver = new Driver[DRIVER_MAX];
@@ -68,7 +66,21 @@ public class UberPets {
             return true;
         } 
         return false;
-    }    
+    } 
+    
+    private Driver lookAvailableDrivers(){
+        return mDriver[0];
+    }
+    
+    public void createNewTrip(Client client, String initialDir, String finalDir){
+        
+        // look for available drivers
+        Driver driver = lookAvailableDrivers();
+        
+        
+        Trip trip = new Trip(client, driver, initialDir,finalDir);
+        
+    }
 
     /**
      * @param args the command line arguments
