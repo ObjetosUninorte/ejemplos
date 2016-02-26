@@ -20,6 +20,17 @@ public class Teacher {
         mCourses.add(c);
     }
     
+    public int getLowAverageCourses(){
+        int counter = 0;
+        for (Course course: mCourses){
+            if (course.getAverage() <= 3.5){
+                counter = counter + 1;
+            }
+        }
+      return counter;    
+    }
+    
+    
 }
 
 

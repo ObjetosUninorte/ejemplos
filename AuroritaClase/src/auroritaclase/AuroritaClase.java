@@ -8,6 +8,16 @@ public class AuroritaClase {
     private ArrayList<Student> mStudents = new ArrayList<Student>(); 
     private ArrayList<Teacher> mTeachers = new ArrayList<Teacher>();
     private ArrayList<Course> mCourses = new ArrayList<Course>(); 
+    
+    public void getTeachearsLowScore(){
+        int number;
+        for (Teacher teacher : mTeachers){
+            number = teacher.getLowAverageCourses();
+            if ( number > 0){
+                System.out.println("Teacher "+teacher.getId() + " has "+number);
+            }
+        }
+    }
 
     public static void main(String[] args) {
         AuroritaClase aurora = new AuroritaClase();
