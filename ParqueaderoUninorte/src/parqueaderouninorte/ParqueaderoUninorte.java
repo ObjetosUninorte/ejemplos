@@ -42,6 +42,8 @@ public class ParqueaderoUninorte {
         ParqueaderoUninorte parqueaderoUninorte = new ParqueaderoUninorte();
         ArrayList<Teacher> teachers = new ArrayList<>(); 
         ArrayList<Student> students = new ArrayList<>(); 
+        // esta lista solo es necesaria para realizar una simulacion
+        // normalmente los carros estan solo amarrados a los profesores
         ArrayList<Car> cars = new ArrayList<>(); 
         
         // agregamos los profesores al sistema
