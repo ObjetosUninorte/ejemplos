@@ -17,3 +17,6 @@ Preguntas:
 
 Para un momento dado, ¿cuantos funcionarios tienen un carro parqueado manejado por un estudiante?
 En un momento dado, ¿cual es el parqueadero que proporcionalmente está más lleno?
+
+EjemploAbstract
+En este proyecto se muestra como implementar clases y metodos abstractos. Ademas se dan ejemplos de polimofirmo de nombre e implementación.
