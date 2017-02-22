@@ -1,0 +1,9 @@
+@startuml
+class herencia.A
+class herencia.B
+class herencia.Herencia
+class herencia2.C
+herencia.B --|> herencia.A
+herencia2.C ..> herencia.A
+herencia2.C ..> herencia.B
+@enduml
