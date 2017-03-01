@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import modelo.Equipo;
 import modelo.MiPc;
 import modelo.Portatil;
 import modelo.Procesador;
@@ -27,4 +28,7 @@ public class Controlador {
         miPc.agregarPortatil(miPc.getBodega(idBodega), p);
     }
     
+     public Equipo encontrarSerial(String serial){
+         return miPc.encontrarSerial(serial);
+     }
 }
