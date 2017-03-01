@@ -23,8 +23,9 @@ public class Vista {
         int idBodega = 1;
         String serialPortaril = "xx";
         String serialProcesador = "yy";
+        float peso = 15f;
         
-        controlador.agregarPB(idBodega,serialPortaril,serialProcesador);
+        controlador.agregarPB(idBodega,serialPortaril,serialProcesador,peso);
     }
     
 }

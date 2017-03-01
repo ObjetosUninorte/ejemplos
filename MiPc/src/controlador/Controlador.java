@@ -22,8 +22,8 @@ public class Controlador {
         this.miPc = miPc; 
     }
 
-    public void agregarPB(int idBodega, String serialPortaril, String serialProcesador) {
-        Portatil p = new Portatil(new Procesador(serialProcesador), serialPortaril);
+    public void agregarPB(int idBodega, String serialPortaril, String serialProcesador, float peso) {
+        Portatil p = new Portatil(new Procesador(serialProcesador), serialPortaril, peso);
         miPc.agregarPortatil(miPc.getBodega(idBodega), p);
     }
     
