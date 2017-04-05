@@ -1,10 +1,15 @@
 package modelo;
 
-public class Servidor {
+public class Servidor extends Equipo{
 
-    private Procesador procesador;
+    private int numeroProcesadores;
 
-    private String serial;
+    public Servidor(Procesador procesador, String serial, int numeroProcesadores) {
+        super(procesador, serial);
+        this.numeroProcesadores = numeroProcesadores;
+    }
 
-    private Bodega bodega;
+    public int getNumeroProcesadores() {
+        return numeroProcesadores;
+    }
 }

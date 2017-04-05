@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/augustosalazar/Documents/NetBeansProjects/MiPc/src/Portatil.java</file>
-            <file>file:/C:/Users/augustosalazar/Documents/NetBeansProjects/MiPc/src/Bodega.java</file>
-            <file>file:/C:/Users/augustosalazar/Documents/NetBeansProjects/MiPc/src/Procesador.java</file>
-            <file>file:/C:/Users/augustosalazar/Documents/NetBeansProjects/MiPc/src/MiPc.java</file>
-            <file>file:/C:/Users/augustosalazar/Documents/NetBeansProjects/MiPc/src/Servidor.java</file>
+            <file>file:/C:/ejemplos-master/MiPc/src/modelo/Equipo.java</file>
+            <file>file:/C:/ejemplos-master/MiPc/src/modelo/Servidor.java</file>
+            <file>file:/C:/ejemplos-master/MiPc/src/vista/Vista.java</file>
+            <file>file:/C:/ejemplos-master/MiPc/src/controlador/Controlador.java</file>
+            <file>file:/C:/ejemplos-master/MiPc/src/modelo/Portatil.java</file>
+            <file>file:/C:/ejemplos-master/MiPc/src/modelo/Procesador.java</file>
         </group>
     </open-files>
 </project-private>

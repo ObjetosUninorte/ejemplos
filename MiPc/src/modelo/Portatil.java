@@ -1,44 +1,21 @@
 package modelo;
 
-public class Portatil {
-
-    private Procesador procesador;
-
-    private String serial;
-
-    private Bodega bodega;
-
-    public Portatil(Procesador procesador, String serial) {
-        this.procesador = procesador;
-        this.serial = serial;
-
-    }
+public  class Portatil extends Equipo{
     
+    private float peso;
+
+    public Portatil(Procesador procesador, String serial, float peso) {
+        super(procesador, serial);
+        this.peso = peso;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
+
+
+
     
-
-    public Procesador getProcesador() {
-        return procesador;
-    }
-
-    public void setProcesador(Procesador procesador) {
-        this.procesador = procesador;
-    }
-
-    public String getSerial() {
-        return serial;
-    }
-
-    public void setSerial(String serial) {
-        this.serial = serial;
-    }
-
-    public Bodega getBodega() {
-        return bodega;
-    }
-
-    public void setBodega(Bodega bodega) {
-        this.bodega = bodega;
-    }
     
     
 }
