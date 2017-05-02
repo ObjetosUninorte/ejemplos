@@ -12,7 +12,11 @@ package agregacion;
 public class Fabrica {
     
     public Carro construircarro(){
-        Carro carro = new Carro(new Llanta(), new Llanta(), new Llanta(), new Llanta());
+        Llanta l1 = new Llanta();
+        Llanta l2 = new Llanta();
+        Llanta l3 = new Llanta();
+        Llanta l4 = new Llanta();
+        Carro carro = new Carro(l1, l2, l3, l4);
         return carro;
     }
     
