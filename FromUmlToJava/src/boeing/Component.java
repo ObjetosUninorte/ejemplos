@@ -29,13 +29,12 @@ public class Component {
         Component suby = new Component(airplane);
         subAssembly.add(subx);
         subAssembly.add(suby);
+        assembly = new ArrayList<>();
+
     }
     
     public void addAssembly(Component component){
         assembly.add(component);
     }
-    
-  
-    
-    
-}
+   
+ }
