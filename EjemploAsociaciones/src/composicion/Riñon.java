@@ -9,7 +9,6 @@ package composicion;
  *
  * @author augustosalazar
  */
-public class Corazon {
-    
+public class Riñon {
     
 }
