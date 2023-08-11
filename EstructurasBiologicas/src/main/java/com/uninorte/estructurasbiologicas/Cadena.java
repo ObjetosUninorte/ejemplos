@@ -13,6 +13,7 @@ public class Cadena {
     private boolean cadenaReadOnly = false;
 
     private Cadena(Molecula m1, Molecula m2, Molecula m3) {
+        moleculas = new ArrayList<>();
         moleculas.add(m1);
         moleculas.add(m2);
         moleculas.add(m3);
