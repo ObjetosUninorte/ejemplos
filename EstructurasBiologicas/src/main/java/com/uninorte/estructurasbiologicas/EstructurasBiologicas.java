@@ -39,13 +39,9 @@ public class EstructurasBiologicas {
 
     public static void main(String[] args) {
         EstructurasBiologicas eb = new EstructurasBiologicas();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             eb.agregarRandomMolecula();
         }
-        for (int i = 0; i < 10; i++) {
-            eb.createBloque(eb.createCadena(eb.moleculas.get(i), eb.moleculas.get(i + 1), eb.moleculas.get(i + 2)),
-                    eb.createCadena(eb.moleculas.get(i + 3), eb.moleculas.get(i + 4), eb.moleculas.get(i + 5)),
-                    eb.createCadena(eb.moleculas.get(i + 6), eb.moleculas.get(i + 7), eb.moleculas.get(i + 8)));
-        }
+
     }
 }
