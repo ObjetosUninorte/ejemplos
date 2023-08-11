@@ -14,6 +14,12 @@ public class Molecula {
         this.categoria = categoria;
     }
 
+    //create a factory constructor that returns a Molecula with a random cargaProteinica and a random Categoria
+    // the random category should be selected from the Categoria enum
+    public static Molecula createRandom() {
+        return new Molecula((int) (Math.random() * 10), Categoria.getRandomCategoria());
+    }
+
     public int getCargaProteinica() {
         return cargaProteinica;
     }

@@ -12,11 +12,19 @@ public class Cadena {
     private ArrayList<Molecula> moleculas;
     private boolean cadenaReadOnly = false;
 
-    public Cadena(Molecula m1, Molecula m2, Molecula m3) {
+    private Cadena(Molecula m1, Molecula m2, Molecula m3) {
         moleculas.add(m1);
         moleculas.add(m2);
         moleculas.add(m3);
         setCategoria();
+    }
+
+    //create a factory that gets an array of Moleculas and resturns a Cadena if there are at least 3 entries
+    public static Cadena createCadena(Molecula[] moleculas) {
+        if (moleculas.length < 3) {
+            return null;
+        }
+        return new Cadena(moleculas[0], moleculas[1], moleculas[2]);
     }
 
     public void setReadOnly(){
@@ -41,6 +49,22 @@ public class Cadena {
     }
     
     private void setCategoria(){
-        categoria = Categoria.A;
+        int count;
+        int max = 0;
+        Categoria maxCategoria = Categoria.A;
+        for(Molecula i : moleculas){
+            count = 0;
+            for (Molecula j : moleculas) {
+                if(i.getCategoria() != j.getCategoria()){
+                    count++;
+                }
+            }
+            if(count > max){
+                max = count;
+                maxCategoria = i.getCategoria();
+            }
+            
+        }
+        categoria = maxCategoria;
     }
 }
