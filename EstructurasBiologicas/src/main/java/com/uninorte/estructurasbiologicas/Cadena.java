@@ -12,6 +12,12 @@ public class Cadena {
     private ArrayList<Molecula> moleculas;
     private boolean cadenaReadOnly = false;
 
+    private Cadena(ArrayList<Molecula> listaMoleculas) {
+        moleculas = new ArrayList<>();
+        moleculas.addAll(listaMoleculas);
+        setCategoria();
+    }
+
     private Cadena(Molecula m1, Molecula m2, Molecula m3) {
         moleculas = new ArrayList<>();
         moleculas.add(m1);
@@ -21,15 +27,34 @@ public class Cadena {
     }
 
     //create a factory that gets an array of Moleculas and resturns a Cadena if there are at least 3 entries
-    public static Cadena createCadena(Molecula[] moleculas) {
-        if (moleculas.length < 3) {
+    public static Cadena createCadena(ArrayList<Molecula> listaMoleculas) {
+        if (listaMoleculas.size() < 3) {
             return null;
         }
-        return new Cadena(moleculas[0], moleculas[1], moleculas[2]);
+        for (Molecula molecula : listaMoleculas) {
+           molecula.setEnCadena();   
+        }
+        return new Cadena(listaMoleculas);
+    }
+
+    //get the avarage cargaProteinica of the Moleculas in the Cadena
+    public double getAverageCargaProteinica() {
+        if (moleculas.isEmpty()) {
+            return 0;
+        }
+        double sum = 0;
+        for (Molecula molecula : moleculas) {
+            sum += molecula.getCargaProteinica();
+        }
+        return sum / moleculas.size();
     }
 
     public void setReadOnly(){
         cadenaReadOnly = true;
+    }
+
+    public boolean isReadOnly(){
+        return cadenaReadOnly;
     }
    
     public Categoria getCategoria() {

@@ -28,6 +28,14 @@ public class Bloque {
         }
         return new Bloque(c1, c2, c3);
     }
+
+    //print the categories of the Cadenas in the Bloque
+    public void printCategorias() {
+        for (Cadena cadena : cadenas) {
+            System.out.print(cadena.getCategoria()+ " ");
+        }
+        System.out.println("");
+    }
     
     
 }
