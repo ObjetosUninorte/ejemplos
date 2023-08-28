@@ -32,6 +32,11 @@ public class Cadena {
             return null;
         }
         for (Molecula molecula : listaMoleculas) {
+           if (molecula.estaEnCadena()){
+               return null;
+           }  
+        }
+        for (Molecula molecula : listaMoleculas) {
            molecula.setEnCadena();   
         }
         return new Cadena(listaMoleculas);
