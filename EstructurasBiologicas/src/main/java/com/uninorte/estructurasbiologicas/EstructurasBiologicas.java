@@ -119,8 +119,8 @@ public class EstructurasBiologicas {
         boolean c;
         for (int i = 0; i < 60; i++) {
             ArrayList<Molecula> moleculas = new ArrayList<>();
-            moleculas.clear();
             do{
+                moleculas.clear();
                 for (int j = 0; j < 3; j++)
                     moleculas.add(eb.getRandomMolecula());
                 c = eb.createCadena(moleculas);

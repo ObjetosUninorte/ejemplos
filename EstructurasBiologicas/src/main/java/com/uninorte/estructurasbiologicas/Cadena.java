@@ -26,7 +26,7 @@ public class Cadena {
         setCategoria();
     }
 
-    //create a factory that gets an array of Moleculas and resturns a Cadena if there are at least 3 entries
+    //create a factory that gets an array of Moleculas and returns a Cadena if there are at least 3 entries
     public static Cadena createCadena(ArrayList<Molecula> listaMoleculas) {
         if (listaMoleculas.size() < 3) {
             return null;
