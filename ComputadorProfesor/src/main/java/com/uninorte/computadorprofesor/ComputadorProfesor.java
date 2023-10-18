@@ -12,9 +12,16 @@ import java.util.ArrayList;
  */
 public class ComputadorProfesor {
     private ArrayList<Card> cards = new ArrayList<>();
+    private AcceleratorCard acceleratorCard;
+    private Cache cache;
+
+    ComputadorProfesor(AcceleratorCard acceleratorCard, Cache cache){
+        this.acceleratorCard = acceleratorCard;
+        this.cache = cache; 
+    }
 
     public static void main(String[] args) {
-        ComputadorProfesor machine = new ComputadorProfesor();
+            ComputadorProfesor machine = new ComputadorProfesor(new AcceleratorCard(), new Cache());
         	machine.addDeviceCard(0);
         	machine.addExtensionCard(1);
         	machine.addExtensionCard(2);
