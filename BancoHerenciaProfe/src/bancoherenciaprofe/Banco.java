@@ -6,6 +6,7 @@
 package bancoherenciaprofe;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
@@ -42,25 +43,29 @@ public class Banco {
         Tipo3 sucTipo3;
         Cliente c;
 
-        int i = 0;
+        
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, 2023);
+        cal.set(Calendar.MONTH, Calendar.JANUARY);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        
+        int i = 1;
         laPrincipal = new Tipo0(999);
         banco.agregarSucursalTipo0(laPrincipal);
-        i++;
 
-        //System.out.println("Tipo1");
         for (int j = 1; j <= 5; j++) {
             sucTipo1 = new Tipo1(i);
             i++;
-            System.out.println("creando Tipo1 " + sucTipo1.getId());
+            
             banco.agregarSucursalTipo1(sucTipo1);
             for (int z = 1; z <= (10 * j); z++) {
                 c = new Cliente(i ^ 100 * j ^ 10 + z);
                 banco.agregarCliente(c);
                 banco.agregarProductoCliente(c, new Cuenta(1, 10, 1000 * i * j * z)); // creo la cuenta con id, tasaInteres, saldo
-                banco.agregarProductoCliente(c, new CDT(2 * i, new Date(2020, 1, 1), 10, i * j * 20 * z)); // creo el cdt con id, fechaV, tasaInteres, saldo
+                banco.agregarProductoCliente(c, new CDT(2 * i, cal.getTime(), 10, i * j * 20 * z)); // creo el cdt con id, fechaV, tasaInteres, saldo
 
                 for (int w = 1; w < z; w++) {
-                    banco.agregarProductoCliente(c, new TC(3 * i + w, new Date(2020, 1, 1), 10, i * j * 30 * z)); // creo  con id, fechaV, tasaInteres, saldo
+                    banco.agregarProductoCliente(c, new TC(3 * i + w, cal.getTime(), 10, i * j * 30 * z)); // creo  con id, fechaV, tasaInteres, saldo
                 }
 
                 for (int w = 1; w < z; w++) {
@@ -75,16 +80,16 @@ public class Banco {
         for (int j = 1; j <= 5; j++) {
             sucTipo2 = new Tipo2(i);
             i++;
-            System.out.println("creando Tipo2 " + sucTipo2.getId());
+            
             banco.agregarSucursalTipo2(sucTipo2);
             for (int z = 1; z <= (10 * j); z++) {
                 c = new Cliente(i ^ 100 * j ^ 10 + z);
                 banco.agregarCliente(c);
                 banco.agregarProductoCliente(c, new Cuenta(1, 10, 1000 * i * j * z)); // creo la cuenta con id, tasaInteres, saldo
-                banco.agregarProductoCliente(c, new CDT(2 * i, new Date(2020, 1, 1), 10, i * j * 20 * z)); // creo el cdt con id, fechaV, tasaInteres, saldo
+                banco.agregarProductoCliente(c, new CDT(2 * i, cal.getTime(), 10, i * j * 20 * z)); // creo el cdt con id, fechaV, tasaInteres, saldo
 
                 for (int w = 1; w < z; w++) {
-                    banco.agregarProductoCliente(c, new TC(3 * i + w, new Date(2020, 1, 1), 10, i * j * 30 * z)); // creo  con id, fechaV, tasaInteres, saldo
+                    banco.agregarProductoCliente(c, new TC(3 * i + w, cal.getTime(), 10, i * j * 30 * z)); // creo  con id, fechaV, tasaInteres, saldo
                 }
 
                 for (int w = 1; w < z; w++) {
@@ -100,16 +105,16 @@ public class Banco {
         for (int j = 1; j <= 3; j++) {
             sucTipo3 = new Tipo3(i);
             i++;
-            System.out.println("creando Tipo3 " + sucTipo3.getId());
+            
             banco.agregarSucursalTipo3(sucTipo3);
             for (int z = 1; z <= (10 * j); z++) {
                 c = new Cliente(i ^ 100 * j ^ 10 + z);
                 banco.agregarCliente(c);
                 banco.agregarProductoCliente(c, new Cuenta(1, 10, 1000 * i * j * z)); // creo la cuenta con id, tasaInteres, saldo
-                banco.agregarProductoCliente(c, new CDT(2 * i, new Date(2020, 1, 1), 10, i * j * 20 * z)); // creo el cdt con id, fechaV, tasaInteres, saldo
+                banco.agregarProductoCliente(c, new CDT(2 * i, cal.getTime(), 10, i * j * 20 * z)); // creo el cdt con id, fechaV, tasaInteres, saldo
 
                 for (int w = 1; w < z; w++) {
-                    banco.agregarProductoCliente(c, new TC(3 * i + w, new Date(2020, 1, 1), 10, i * j * 30 * z)); // creo  con id, fechaV, tasaInteres, saldo
+                    banco.agregarProductoCliente(c, new TC(3 * i + w, cal.getTime(), 10, i * j * 30 * z)); // creo  con id, fechaV, tasaInteres, saldo
                 }
 
                 for (int w = 1; w < z; w++) {
