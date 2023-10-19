@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "ParqueaderoUninorte/src",
+        "MisMascotas/src",
+        "MickeyMouse/src",
+        "Intro/src",
+        "AuroritaClase/src",
+        "Aeropuerto/src/main/java/com/uninorte/aeropuerto"
+    ]
+}
