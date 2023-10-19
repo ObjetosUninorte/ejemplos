@@ -13,9 +13,7 @@ public class AuroritaClase {
         int number;
         for (Teacher teacher : mTeachers){
             number = teacher.getLowAverageCourses();
-            if ( number > 0){
-                System.out.println("Teacher "+teacher.getId() + " has "+number);
-            }
+                System.out.println("Teacher "+teacher.getId() + " has "+number + " courses with low average (<=3.5)");
         }
     }
 
@@ -42,7 +40,6 @@ public class AuroritaClase {
                 }
             }
             course.addTeacher(teacher);
-            teacher.addCourse(course);
             for (int j = 0; j < 30; j++) {
                 r = rnd.nextInt(200);
                 Student s = null;
@@ -52,11 +49,11 @@ public class AuroritaClase {
                         break;
                     }
                 }
-                System.out.println(s.getId());
                 course.addStudent(s);
-                s.addCourse(course);
+                course.addGradeToStudent(s.getId(), rnd.nextInt(5));
             }
         }
+        aurora.getTeachearsLowScore();
         
     }
 }
