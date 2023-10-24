@@ -2,9 +2,9 @@ package com.uninorte.uicomponents;
 
 public class Row extends MultiChildWidget{
 
-    Row(int id, int x, int y, int width, int height) {
+    public Row(int id, int x, int y, int width, int height) {
         super(id, x, y, width, height);
-        System.out.println("Creating a row with id: " + id);
+        //System.out.println("Creating a row with id: " + id);
     }
 
     @Override

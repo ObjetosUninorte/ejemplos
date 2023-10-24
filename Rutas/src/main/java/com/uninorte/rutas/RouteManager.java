@@ -62,7 +62,7 @@ public class RouteManager {
             // if current is end cell, we found the route
             if(current == end){
                 // reconstruct path
-                reconstructPath();
+                //reconstructPath();
                 return;
             }
             // get neighbors of current

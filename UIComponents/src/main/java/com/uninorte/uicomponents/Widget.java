@@ -11,7 +11,7 @@ abstract public class Widget {
         this.y = y;
         this.width = width;
         this.height = height;
-        System.out.println("Creating a widget with id: " + id);
+        //System.out.println("Creating a widget with id: " + id);
     }
 
     abstract public void draw();

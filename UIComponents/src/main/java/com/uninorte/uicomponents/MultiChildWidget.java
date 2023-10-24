@@ -9,6 +9,10 @@ abstract public class MultiChildWidget extends Widget{
         super(id, x, y, width, height);
     }
 
+    public int getChildCount() {
+        return children.size();
+    }
+
     public void addChild(Widget child) {
         children.add(child);
     }
