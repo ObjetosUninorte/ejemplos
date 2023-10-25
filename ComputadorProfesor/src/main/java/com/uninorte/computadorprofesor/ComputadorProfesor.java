@@ -15,7 +15,7 @@ public class ComputadorProfesor {
     private AcceleratorCard acceleratorCard;
     private Cache cache;
 
-    ComputadorProfesor(AcceleratorCard acceleratorCard, Cache cache){
+    public ComputadorProfesor(AcceleratorCard acceleratorCard, Cache cache){
         this.acceleratorCard = acceleratorCard;
         this.cache = cache; 
     }
@@ -80,9 +80,13 @@ public class ComputadorProfesor {
         }
     }
 
-    private void addDeviceCard(int i) {
+    public void addDeviceCard(int i) {
         if (cards.size() < 2){
             cards.add(new DeviceCard(i));
         }
+    }
+
+    public int getCardCount() {
+         return cards.size();
     }
 }
