@@ -19,5 +19,9 @@ public class Paciente extends Persona{
             System.out.println(cita);
         }
     }
+
+    public int getCitasCount() {
+        return citas.size();
+    }
     
 }

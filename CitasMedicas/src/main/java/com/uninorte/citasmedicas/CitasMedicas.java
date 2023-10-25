@@ -42,21 +42,21 @@ public class CitasMedicas {
         
     }
 
-    private void imprimirCitasDoctores() {
+    public void imprimirCitasDoctores() {
         System.out.println("Citas de doctores");
         for (Doctor d: doctores) {
             d.imprimirCitas();
         }
     }
 
-    private void imprimirCitasPacientes() {
+    public void imprimirCitasPacientes() {
         System.out.println("Citas de pacientes");
         for (Paciente p: pacientes) {
             p.imprimirCitas();
         }
     }
 
-    private void agregarCita(int idPaciente, int idDoctor) {
+    public void agregarCita(int idPaciente, int idDoctor) {
         Doctor doctor = buscarDoctor(idDoctor);
         Paciente paciente = buscarPaciente(idPaciente);
         if (doctor != null && paciente != null) {
@@ -66,7 +66,7 @@ public class CitasMedicas {
             System.out.println("No se pudo crear la cita paciente "+idPaciente+ " doctor "+idDoctor);}
     }
 
-    private Doctor buscarDoctor(int i) {
+    public Doctor buscarDoctor(int i) {
         for(Doctor doctor: doctores) {
             if (doctor.getId() == i) {
                 return doctor;
@@ -76,7 +76,7 @@ public class CitasMedicas {
         return null;
     }
 
-    private Paciente buscarPaciente(int i) {
+    public Paciente buscarPaciente(int i) {
         for(Paciente paciente: pacientes) {
             if (paciente.getId() == i) {
                 return paciente;
@@ -84,6 +84,22 @@ public class CitasMedicas {
         }
         System.out.println("No se encontro el paciente "+i);
         return null;
+    }
+
+    public int getDoctorCount() {
+        return doctores.size();
+    }
+
+    public int getPatientCount() {
+        return pacientes.size();
+    }
+
+    public int getCitasCountDoctor(int i) {
+        return buscarDoctor(i).getCitasCount();
+    }
+
+    public int getCitasCountPatient(int i) {
+        return buscarPaciente(i).getCitasCount();
     }
 
 
