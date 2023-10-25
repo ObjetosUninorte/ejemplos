@@ -8,11 +8,11 @@ public class ExtensionCard extends Card {
 
     public ExtensionCard(int id) {
         super(id);
-       
+
     }
 
     public void addCard(Card card) {
-        if (cards.size() < 3){
+        if (cards.size() < 3) {
             this.cards.add(card);
             card.addExtensionCard(this);
         }
@@ -21,13 +21,13 @@ public class ExtensionCard extends Card {
     public Card getCardById(int i) {
         for (Card card : cards) {
             //System.out.println("Looking in EC "+getId()+" for "+i);
-            if (card.getId() == i){
+            if (card.getId() == i) {
                 return card;
             }
-            if (card instanceof ExtensionCard){
+            if (card instanceof ExtensionCard) {
                 Card card2 = ((ExtensionCard) card).getCardById(i);
-                if (card2 != null){
-                    
+                if (card2 != null) {
+
                     return card2;
                 }
             }
@@ -35,19 +35,55 @@ public class ExtensionCard extends Card {
         return null;
     }
 
-
-    public void print(){
+    public void print() {
         System.out.println("ExtensionCard " + getId());
-        if (cards.isEmpty()){
+        if (cards.isEmpty()) {
             System.out.println("Empty");
             return;
         }
-        for(int i=0; i< cards.size();i++){
-            System.out.println("*************ExtensionCard "+getId()+" on slot "+i+"***************");
+        for (int i = 0; i < cards.size(); i++) {
+            System.out.println("*************ExtensionCard " + getId() + " on slot " + i + "***************");
             cards.get(i).print();
         }
-        
-   }
 
+    }
+
+    int getDeviceCardCount() {
+        int total = 0;
+        for (Card card : cards) {
+
+            if (card instanceof ExtensionCard ec) {
+                total = total + ec.getDeviceCardCount();
+            } else {
+                total++;
+            }
+
+        }
+        return total;
+    }
+
+    int getTotalCardCount() {
+        int total = 0;
+        for (Card card : cards) {
+            if (card instanceof ExtensionCard ec) {
+                total = total + ec.getTotalCardCount();
+                total++;
+            } else {
+                total++;
+            }
+        }
+        return total;
+    }
+
+    int getExtentionCardCount() {
+        int total = 0;
+        for (Card card : cards) {
+            if (card instanceof ExtensionCard ec) {
+                total = total + ec.getExtentionCardCount();
+                total++;
+            }
+        }
+        return total;
+    }
 
 }
