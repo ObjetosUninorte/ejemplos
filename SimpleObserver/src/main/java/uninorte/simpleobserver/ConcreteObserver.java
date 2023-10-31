@@ -1,12 +1,12 @@
 package uninorte.simpleobserver;
 
-public class ConcreateObserver extends Observer{
+public class ConcreteObserver extends Observer{
 
     private int state;
     private ConcreteSubject subject;
 
 
-    public ConcreateObserver(ConcreteSubject subject) {
+    public ConcreteObserver(ConcreteSubject subject) {
         this.subject = subject;
         subject.addObserver(this);
     }
